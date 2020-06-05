@@ -1,9 +1,5 @@
-title: "jekyll-new"
-description: "Starting point with many features to build your very own awesome Jekyll theme."
-author:
-  name: "jekyll-new"
-  email: "veller950@gmail.com"
-  url: "https://vllur.github.io"
+title: "To-do List"
+description: "To do list web application."
 
 url: "https://vllur.github.io"
 baseurl: /to-do-list
