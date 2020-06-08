@@ -32,6 +32,8 @@ form, ul{
 
 	& li{
 		margin: 1em;
+		display: flex;
+		justify-content: space-between;
 	}
 }
 
