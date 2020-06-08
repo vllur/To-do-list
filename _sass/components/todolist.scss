@@ -2,7 +2,7 @@ article{
 	padding: 1em;
 }
 
-.form{
+.Form{
 	display: flex;
 
 	& input{
@@ -18,7 +18,7 @@ article{
 	}
 }
 
-.todo-list{
+.Todo{
 	max-height: 50vh;
 	overflow-y: auto;
 }
