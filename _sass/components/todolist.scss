@@ -14,9 +14,23 @@ article{
 	& button{
 		width: 20%;
 		padding: 1em;
-		border: none;
 		background-color: $green;
 	  color: white;
+
+		border: none;
+		border-right: 1px solid lighten($green, 10%);
+		border-bottom: 1px solid lighten($green, 10%);
+	}
+
+	& button:hover{
+		background-color: lighten($green, 5%);
+		cursor: pointer;
+	}
+
+	& button:active{
+		border: none;
+		border-left: 1px solid lighten($green, 10%);
+		border-top: 1px solid lighten($green, 10%);
 	}
 }
 
