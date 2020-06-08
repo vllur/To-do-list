@@ -1,0 +1,24 @@
+article{
+	padding: 1em;
+}
+
+.form{
+	display: flex;
+
+	& input{
+		padding: 0.5em 0.75em;
+		border: none;
+	}
+
+	& button{
+		padding: 0.5em 0.75em;
+		border: none;
+		background-color: $green;
+	  color: white;
+	}
+}
+
+.todo-list{
+	max-height: 50vh;
+	overflow-y: auto;
+}
