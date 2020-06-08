@@ -77,11 +77,12 @@ window.onload = function(){
 		});
 	}
 
-	//clear list event listener
 	function clearList(){
-		todoList = [];
-		localStorage.clear();
-		list.innerHTML = "";
-		buttonClear.style.display = "none";
+    if(confirm("Do you really want to completely clear your list?")){
+      todoList = [];
+  		localStorage.clear();
+  		list.innerHTML = "";
+  		buttonClear.style.display = "none";
+    }
 	}
 }
