@@ -10,23 +10,20 @@ window.onload = function(){
 	var liItem = "";
 	var todoList = [];
 
-	//button event listener
 	button.addEventListener("click", addTodoItem);
 	list.addEventListener("click", boxChecked);
 	buttonClear.addEventListener("click", clearList);
 
 	if(localStorage.length <= 0){
 		buttonClear.style.display = "none";
-	}
-	if(localStorage.length > 0){
+	}else{
 		displayList();
 	}
 
 	function addTodoItem(){
 		if(input.value === ""){
 			alert("You must enter some value!");
-		}
-		else {
+		}else{
 			buttonClear.style.display = "inline";
 			var text = input.value;
 			var item = `<li id="li-${id}"><div class="text">${text}</div><input id="box-${id}" type="checkbox"></li>`;
@@ -35,7 +32,7 @@ window.onload = function(){
 			todoList.push(liItem);
 			id++;
 			addToLocalStorage()
-			form.reset();
+			input.value = "";
 		}
 	}
 
