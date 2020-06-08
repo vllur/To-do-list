@@ -1,0 +1,21 @@
+@mixin button($width, $padding, $bgcolor){
+  width: $width;
+  padding: $padding;
+  background-color: $bgcolor;
+  color: white;
+
+  border: none;
+  border-right: 1px solid lighten($bgcolor, 10%);
+  border-bottom: 1px solid lighten($bgcolor, 10%);
+}
+
+@mixin buttonHover($color){
+  background-color: lighten($color, 5%);
+  cursor: pointer;
+}
+
+@mixin buttonActive($color){
+  border: none;
+  border-left: 1px solid lighten($color, 10%);
+  border-top: 1px solid lighten($color, 10%);
+}
