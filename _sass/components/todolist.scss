@@ -34,6 +34,10 @@ form, ul{
 		margin: 1em;
 		display: flex;
 		justify-content: space-between;
+
+		& .text{
+			text-align: left;
+		}
 	}
 }
 

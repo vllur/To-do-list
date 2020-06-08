@@ -29,7 +29,7 @@ window.onload = function() {
 		else {
 			buttonClear.style.display = "inline";
 			var text = input.value;
-			var item = `<li id="li-${id}"><div>${text}</div><input id="box-${id}" type="checkbox"></li>`;
+			var item = `<li id="li-${id}"><div class="text">${text}</div><input id="box-${id}" type="checkbox"></li>`;
 			list.insertAdjacentHTML('beforeend', item);
 			liItem = {item: text, checked: false};
 			todoList.push(liItem);
@@ -65,7 +65,7 @@ window.onload = function() {
 		todoList.forEach(function(element) {
 			console.log(element.item)
 			var text = element.item;
-			var item = `<li id="li-${id}"><div>${text}</div><input id="box-${id}" type="checkbox"></li>`;
+			var item = `<li id="li-${id}"><div class="text">${text}</div><input id="box-${id}" type="checkbox"></li>`;
 			list.insertAdjacentHTML("beforeend", item);
 			//if we got a checked box, then style
 			if(element.checked) {
