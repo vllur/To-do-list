@@ -43,19 +43,18 @@ window.onload = function(){
 	}
 
 	function boxChecked(event){
-    var textStyle = event.target.parentNode.style.textDecoration;
-    todoList = JSON.parse(localStorage.getItem("todoList"));
-
     if(event.target.type == "checkbox"){
-  		if(textStyle === "none" || textStyle === ""){
-  			event.target.parentNode.style.textDecoration = "line-through";
-  			todoList[event.target.id.split('-')[1]-1].checked = true;
-  		}else{
-        event.target.parentNode.style.textDecoration = "none";
-        todoList[event.target.id.split('-')[1]-1].checked = false;
-      }
-    }
-    localStorage.setItem("todoList", JSON.stringify(todoList));
+			var textStyle = event.target.parentNode.parentNode.style.textDecoration;
+		  todoList = JSON.parse(localStorage.getItem("todoList"));
+	  		if(textStyle === "none" || textStyle === ""){
+	  			event.target.parentNode.parentNode.style.textDecoration = "line-through";
+	  			todoList[event.target.id.split('-')[1]-1].checked = true;
+	  		}else{
+	        event.target.parentNode.parentNode.style.textDecoration = "none";
+	        todoList[event.target.id.split('-')[1]-1].checked = false;
+	      }
+	    localStorage.setItem("todoList", JSON.stringify(todoList));
+		}
 	}
 
 	function addToLocalStorage(){
@@ -68,23 +67,25 @@ window.onload = function(){
 	}
 
 	function deleteItem(event){
-		var id = Number(event.target.id[4]) - 1;
-		todoList = JSON.parse(localStorage.getItem("todoList"));
-		if(event.target.className == "icon-trash"){
-	    if(confirm("Do you really want to delete this note?")){
-	      todoList.splice(id, 1);
-	    }
+		if(event.target.classList.contains("icon-trash")){
+			var id = Number(event.target.id[4]) - 1;
+			todoList = JSON.parse(localStorage.getItem("todoList"));
+			if(event.target.className == "icon-trash"){
+		    if(confirm("Do you really want to delete this note?")){
+		      todoList.splice(id, 1);
+		    }
 
-		localStorage.setItem("todoList", JSON.stringify(todoList));
+			localStorage.setItem("todoList", JSON.stringify(todoList));
 
-		if(!(Array.isArray(todoList) && todoList.length)){
-			todoList = [];
-  		localStorage.clear();
-  		buttonClear.style.display = "none";
-		}
-		list.innerHTML = "";
-		location.reload();
-		displayList();
+			if(!(Array.isArray(todoList) && todoList.length)){
+				todoList = [];
+	  		localStorage.clear();
+	  		buttonClear.style.display = "none";
+			}
+			list.innerHTML = "";
+			location.reload();
+			displayList();
+			}
 		}
 	}
 
@@ -99,7 +100,7 @@ window.onload = function(){
   		if(element.checked == true){
   			var li = document.getElementById("li-"+id);
   			li.style.textDecoration = "line-through";
-  			li.childNodes[2].checked = true;
+  			li.childNodes[1].childNodes[1].checked = true;
   		}
   		id++;
 		});
