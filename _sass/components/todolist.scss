@@ -38,6 +38,11 @@ form, ul{
 		& .text{
 			text-align: left;
 		}
+
+		& .controls{
+			display: flex;
+			align-content: center;
+		}
 	}
 }
 
