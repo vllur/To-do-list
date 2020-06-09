@@ -13,6 +13,12 @@ window.onload = function(){
 	list.addEventListener("click", boxChecked);
 	buttonClear.addEventListener("click", clearList);
 
+	input.addEventListener("keyup", function(event){
+		if(event.key === "Enter"){
+			addTodoItem();
+		}
+	})
+
 	if(localStorage.length <= 0){
 		buttonClear.style.display = "none";
 	}else{
