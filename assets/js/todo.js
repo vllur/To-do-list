@@ -44,13 +44,13 @@ window.onload = function(){
 
 	function boxChecked(event){
     if(event.target.type == "checkbox"){
-			var textStyle = event.target.parentNode.parentNode.style.textDecoration;
+			var textStyle = event.target.parentNode.parentNode.childNodes[0].style.textDecoration;
 		  todoList = JSON.parse(localStorage.getItem("todoList"));
 	  		if(textStyle === "none" || textStyle === ""){
-	  			event.target.parentNode.parentNode.style.textDecoration = "line-through";
+	  			event.target.parentNode.parentNode.childNodes[0].style.textDecoration = "line-through";
 	  			todoList[event.target.id.split('-')[1]-1].checked = true;
 	  		}else{
-	        event.target.parentNode.parentNode.style.textDecoration = "none";
+	        event.target.parentNode.parentNode.childNodes[0].style.textDecoration = "none";
 	        todoList[event.target.id.split('-')[1]-1].checked = false;
 	      }
 	    localStorage.setItem("todoList", JSON.stringify(todoList));
@@ -99,7 +99,7 @@ window.onload = function(){
 
   		if(element.checked == true){
   			var li = document.getElementById("li-"+id);
-  			li.style.textDecoration = "line-through";
+  			li.childNodes[0].style.textDecoration = "line-through";
   			li.childNodes[1].childNodes[1].checked = true;
   		}
   		id++;
