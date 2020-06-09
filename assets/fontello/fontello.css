@@ -34,5 +34,10 @@
 
 }
 
+.icon-pencil, .icon-trash{
+  display: flex;
+  align-items: center;
+}
+
 .icon-pencil:before { content: '\e800'; }
 .icon-trash:before { content: '\e801'; }
